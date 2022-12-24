@@ -1,0 +1,325 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="parallax filter-black">
+        <div class="parallax-image">
+            <img src="{% static 'front/img/nike2.jpg' %}">
+        </div>
+        <div class="small-info">
+            <h1>Artikel</h1>
+        </div>
+    </div>
+
+    <div class="section">
+           <div class="container">
+               <h2 class="section-title">Deskripsi</h2>
+               <div class="row">
+                   <div class="col-md-6">
+                       <p>
+                        Berita olahraga merupakan salah satu berita yang sering dihadirkan oleh
+                        media untuk menarik jumlah pembaca. Salah satu berita olahraga yang paling
+                        diminati masyarakat adalah sepakbola. Saat ini, sepakbola sudah digemari oleh
+                        semua kalangan masyarakat mulai dari anak-anak, remaja, dewasa hingga orang
+                        tua, baik dia laki-laki atau perempuan. Sepakbola bukan hanya sekadar permainan
+                        di lapangan, tetapi sepakbola sudah menyentuh berbagai aspek kehidupan seperti
+                        aspek pendidikan, aspek ekonomi, aspek sosial, aspek politik, dan lain-lain. Salah
+                        satu dampak negatifnya yang sering kita temukan adalah fanatisme antarsuporter.
+                        Fanatisme suporter seringkali memicu terjadinya bentrokan bahkan saling
+                        menelan korban terutama ketika tim kesayangannya dipertemukan dalam sebuah
+                        kompetisi </p>
+                   </div>
+                     <div class="col-md-6">
+                        <img src="{% static 'front/img/bolaa.jpg' %}"  style="width: 500px;">
+                   </div>
+               </div>
+           </div>
+    </div><!-- section -->
+    
+        <div class="section">
+            <div class="container overflow-hidden">
+                <h2 class="section-title">Artikel</h2>
+                <div class="row gy-5">
+                    <div class="col-6">
+                        {% for a in artikel %}
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="fw-bold">{{forloop.counter}}</h2>
+                                <h2 class="fs-1"> {{a.nama}} </h2>
+
+                                <b><p class="fs-1">"{{a.judul}}"</p></b>
+    
+                                <p class="card-text">{{a.isi}}</p>
+    
+                                <p class="category">{{a.date}}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          {% endfor %}</div>
+                          </div>
+                </div>
+         </div>
+
+         <div class="section">
+            <div class="container">
+                    <h2 class="section-title">my favorite sport</h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                                <div class="card card-plain">
+                                <div class="image">
+                                    <img src="{% static 'front/img/sepakbola2.jpg' %}" alt="..."/>
+                                    <div class="filter">
+                                        <button type="button" class="btn btn-neutral btn-simple">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> <!-- end card -->
+                        </div>
+                        <div class="col-md-8">
+                                <div class="card card-plain">
+                                <div class="image">
+                                    <img src="{% static 'front/img/basket2.jpg' %}" alt="..."/>
+                                    <div class="filter">
+                                        <button type="button" class="btn btn-neutral btn-simple">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> <!-- end card -->
+                        </div>
+                        <div class="col-md-8">
+                                <div class="card card-plain">
+                                <div class="image">
+                                    <img src="{% static 'front/img/takraw.jpg' %}" alt="..."/>
+                                    <div class="filter">
+                                        <button type="button" class="btn btn-neutral btn-simple">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> <!-- end card -->
+                        </div>
+        
+                        <div class="col-md-4">
+                                <div class="card card-plain">
+                                <div class="image">
+                                    <img src="{% static 'front/img/pingpong.jpg' %}" alt="..."/>
+                                    <div class="filter">
+                                        <button type="button" class="btn btn-neutral btn-simple">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> <!-- end card -->
+                        </div>
+        
+                        <div class="col-md-4">
+                                <div class="card card-plain">
+                                <div class="image">
+                                    <img src="{% static 'front/img/bulutangkis2.jpg' %}" alt="..."/>
+                                    <div class="filter">
+                                        <button type="button" class="btn btn-neutral btn-simple">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> <!-- end card -->
+                        </div>
+                        <div class="col-md-4">
+                                <div class="card card-plain">
+                                <div class="image">
+                                    <img src="{% static 'front/img/bersepeda.jpg' %}" alt="..."/>
+                                    <div class="filter">
+                                        <button type="button" class="btn btn-neutral btn-simple">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> <!-- end card -->
+                        </div>
+                        <div class="col-md-4">
+                                <div class="card card-plain">
+                                <div class="image">
+                                    <img src="{% static 'front/img/fitnes.jpg' %}" alt="..."/>
+                                    <div class="filter">
+                                        <button type="button" class="btn btn-neutral btn-simple">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> <!-- end card -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div> <!-- wrapper -->
+
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Sport</h2>
+            <div class="clients-presentation">
+                <div class="row">
+                    <div class="col-md-3">
+                       <div class="info">
+                            <img src="{% static 'front/img/tinju.jpg' %}" width="100" height="100">
+                            <div class="description">
+                                <h4> Tinju </h4>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="col-md-3">
+                        <div class="info">
+                            <img src="{% static 'front/img/f1..jpg' %}" width="100" height="100">
+                            <div class="description">
+                                <h4> Formula F1 </h4>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="col-md-3">
+                        <div class="info">
+                            <img src="{% static 'front/img/renang.jpg' %}" width="100" height="100">
+                            <div class="description">
+                                <h4> Renang </h4>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="col-md-3">
+                        <div class="info">
+                            <img src="{% static 'front/img/baseball.jpg' %}" width="100" height="100">
+                            <div class="description">
+                                <h4> Base Ball </h4>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end section meet our clients -->
+
+    <footer class="footer footer-big">
+        <!-- .footer-black is another class for the footer, for the transparent version, we recommend you to change the url of the image with your favourite image.          -->
+
+        <div class="section section-gray section-clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <h5 class="title">Company</h5>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#" >
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                   Find offers
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Discover Projects
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Our Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    About Us
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-3 col-md-offset-1">
+                    <h5 class="title"> Support</h5>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                   Contact Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                   How it works
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                   24/7 Available
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                   We are hiring
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                   Send Info
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="title"> Help</h5>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                   Contact Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Terms & Conditions
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Company Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                   Money Back
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+                 <div class="col-md-3">
+                    <h5 class="title">Latest News</h5>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#" >
+                                   <i class="fa fa-twitter"></i> <b>Get Shit Done</b>
+                                   The best kit in the market is here, just give it a try and let us...
+                                   <hr class="hr-small">
+                                </a>
+                            </li>
+                            <li>
+                                  <a href="#" >
+                                   <i class="fa fa-twitter"></i>
+                                   We've just been featured on <b> Awwwards Website</b>! Thank you everybody for...
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+            <hr />
+            <div class="copyright">
+                &copy; website dery dinata
+            </div>
+        </div>
+    </footer>
+
+</div> <!-- wrapper -->
+{% endblock content %}

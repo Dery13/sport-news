@@ -1,0 +1,67 @@
+{% extends 'back/base.html' %}
+
+{% block content %}
+
+<div class="content">
+    <div class="container-fluid">
+
+            </div> <!--  end col-md-6  -->
+            <div class="col-md-12">
+                <div class="card">
+                    <form class="form-horizontal" method="POST">
+                        {% csrf_token %}
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                {{ title }}
+                            </h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Nama :</label>
+                                <div class="col-md-9">
+                                   {{ artikel.nama }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Judul :</label>
+                                <div class="col-md-9">
+                                    {{ artikel.judul }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Isi :</label>
+                                <div class="col-md-9">
+                                    {{ artikel.isi }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Kategori :</label>
+                                <div class="col-md-9">
+                                    {{ artikel.kategori }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Date :</label>
+                                <div class="col-md-9">
+                                    {{ artikel.date }}
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="card-footer text-right">
+                            <div class="form-group">
+                                <label class="col-md-3"></label>
+                                <div class="col-md-9">
+                                    <a class="btn btn-info" href="{% url 'tabel_artikel' %}">BACK</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div> <!-- end card -->
+            </div> <!--  end col-md-6  --><!-- end col-md-12 -->
+        </div> <!-- end row -->
+    </div>
+
+{% endblock content %}s

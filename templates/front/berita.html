@@ -1,0 +1,53 @@
+{% extends 'front/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="parallax filter-black">
+        <div class="parallax-image">
+            <img src="{% static 'front/img/nike.jpg' %}" alt="..." />
+        </div>
+        <div class="small-info">
+            <h1>SPORT NEWS</h1>
+            <h1>API</h1>
+        </div>
+    </div>
+
+    <div class="section">
+           <div class="container">
+               <h2 class="section-title">Sport News</h2>
+               <div class="row">
+                {% for a in berita %}
+                    <div class="col-md-4">
+                        <div class="card card-plain">
+                            <div class="image">
+                                <img src={{a.img}} alt="..." />
+                                <div class="filter filter-white">
+                                </div>
+                            </div>
+                            <div class="content">
+                                <p class="category">{{a.title}}</p>
+                                <a class="card-link" href="{{a.link}}">
+                                    <h4 class="title">{{a.desc}}</h4>
+                                </a>
+                                 <div class="footer">
+                                    <div class="author">
+                                        <a class="card-link" href="#">
+                                           <img src={{a.img}} alt="..." class="avatar">
+                                           <span> {{a.nama}} </span>
+                                        </a>
+                                    </div>
+                                    <div class="stats pull-right">
+                                        <i>{{a.tanggal}}</i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end card -->
+                    </div>
+                {% endfor %}
+               </div>
+           </div>
+    </div><!-- section -->
+</div>
+{% endblock content %}
